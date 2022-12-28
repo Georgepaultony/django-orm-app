@@ -74,4 +74,4 @@ admin.site.register(Employee,EmployeeAdmin)
 
 ## RESULT:
 
-
+A Django application to store and retrieve data from a database using Object Relational Mapping(ORM) is Developed.
