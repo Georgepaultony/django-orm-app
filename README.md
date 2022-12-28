@@ -11,7 +11,7 @@ Include your ER diagram here
 
 ### STEP 1:
 
-Create a django project 
+Git clone django-orm-project
 
 ### STEP 2:
 
@@ -29,15 +29,49 @@ Migration of myapp to the server
 
 Testing the admin page 
 
-## PROGRAM
+## PROGRAM:
 
-Include your code here
+### Models Employee Program:
+
+```
+from django.db import models
+from django.contrib import admin
+# Create your models here
+
+class Employee (models.Model):
+    EMP_ID=models.CharField(primary_key=True,max_length=3,help_text="Phonenumber")
+    Name=models.CharField(max_length=100)
+    Post=models.CharField(max_length=30)
+    Salary=models.IntegerField()
+    Email=models.EmailField()
+
+class EmployeeAdmin(admin.ModelAdmin):
+    list_display=('EMP_ID','Name','Post','Salary','Email')
+```
+
+### Admin Site Program:
+
+```
+from django.contrib import admin
+from .models import Employee,EmployeeAdmin
+# Register your models here.
+admin.site.register(Employee,EmployeeAdmin)
+```
 
 ## OUTPUT
 
-Include the screenshot of your admin page.
-
 ### Employee Id Details:
 
-![Server side output](./images/Serveroutput.png)
-## RESULT
+![Employee_Id_Details](./images/employeedetailstable.png)
+
+### Primary Key Error:
+
+![Primary_Key_Error](./images/primarykeyerror.png)
+
+### Server Side Output:
+
+![Server_side_output](./images/serversideoutput.png)
+
+## RESULT:
+
+
